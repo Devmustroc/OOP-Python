@@ -1,0 +1,1 @@
+# This repository contains examples of Object-Oriented Programming in Python. It includes class definitions and methods, as well as use cases for inheritance, polymorphism, and encapsulation. The code is designed to demonstrate best practices for OOP in Python and can serve as a useful resource for those learning or looking to improve their understanding of OOP concepts.
