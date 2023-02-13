@@ -20,13 +20,17 @@ class User(BaseModel):  # Create a class that inherits from the BaseModel class
         default="user"
     ) # The username is a string
     profile_info: ProfileInfo  # The profile_info is a ProfileInfo object
-    liked_posts: Optional[list[int]] = None  #list[int]  # The liked_posts is a list of integers
+    liked_posts: list[int] = Field(
+        description="Array of integers",
+        min_items=2,
+        max_items=10,
+    )  #list[int]  # The liked_posts is a list of integers
 
 
 def get_user_info() -> User:  # The function returns a User object
     profile_info = {"short_description": "test description", "long_description": "test long description"} # Create a dictionary
     profile_info = ProfileInfo(**profile_info)  # Create a ProfileInfo object
-    user_content = {"profile_info": profile_info, "liked_posts": [1, 2, 3]}
+    user_content = {"profile_info": profile_info, "liked_posts": [1] * 10}
     return User(**user_content)  # Return the User object
 
 
