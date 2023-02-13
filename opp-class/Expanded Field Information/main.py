@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from typing import Optional
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 app = FastAPI()  # Create an instance of the FastAPI class
 
@@ -11,7 +11,14 @@ class ProfileInfo(BaseModel):  # Create a class that inherits from the BaseModel
     long_description: str
 
 class User(BaseModel):  # Create a class that inherits from the BaseModel class
-    username: str  # The username is a string
+    username: str  = Field(
+        alias="name",
+        title="The user's name",
+        description="This is the user's name",
+        min_length=1,
+        max_length=50,
+        default="user"
+    ) # The username is a string
     profile_info: ProfileInfo  # The profile_info is a ProfileInfo object
     liked_posts: Optional[list[int]] = None  #list[int]  # The liked_posts is a list of integers
 
@@ -19,7 +26,7 @@ class User(BaseModel):  # Create a class that inherits from the BaseModel class
 def get_user_info() -> User:  # The function returns a User object
     profile_info = {"short_description": "test description", "long_description": "test long description"} # Create a dictionary
     profile_info = ProfileInfo(**profile_info)  # Create a ProfileInfo object
-    user_content = {"username": "testuser", "profile_info": profile_info, "liked_posts": [1, 2, 3]}
+    user_content = {"profile_info": profile_info, "liked_posts": [1, 2, 3]}
     return User(**user_content)  # Return the User object
 
 
