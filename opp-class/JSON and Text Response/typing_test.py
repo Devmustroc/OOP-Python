@@ -24,12 +24,12 @@ def division(a: int, b: Optional[int]) -> Union[int, Optional[float]]:
     return 1    # return 1 if b is 0
 
 
-def test_unpack(input_val: list[str], index: int) -> Tuple[str, int]:
+def test_unpack(input_val: list[str], index: int) -> tuple[str, int]:
     return (input_val[index], index)  # return tuple
 
 
 def test_unpack1(input_val: list[str], index: int) -> List[str]:
-    return [input_val[index], index]  # return list
+    return [input_val[index]]  # return list
 
 
 return_val = test_function(1)  # return type
@@ -44,8 +44,8 @@ return_val = test_function(1)  # return type
 # print(division(3, 0))  # print division by 0
 # print(division(3, 2))  # print division by 2
 
-return_val = test_unpack(["val_1", "val2", "val3"], 2)  # unpack list
-print(return_val)
+return_val0 = test_unpack(["val_1", "val2", "val3"], 2)  # unpack list
+print(return_val0)
 
-return_val = test_unpack1(["val_1", "val2", "val3"], 2)  # unpack list
-print(return_val)  # print unpacked list
+return_val2 = test_unpack1(["val_1", "val2", "val3"], 2)  # unpack list
+print(return_val2)  # print unpacked list
