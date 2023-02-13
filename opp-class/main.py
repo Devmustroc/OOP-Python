@@ -1,10 +1,11 @@
 class Animal:
+    fiends = []
     def __init__(self, name, age, height, weight, health, color):
-        self.name = name,
-        self.age = age,
-        self.height = height,
-        self.weight = weight,
-        self.health = health,
+        self.name = name
+        self.age = age
+        self.height = height
+        self.weight = weight
+        self.health = health
         self.color = color
 
     def print_name(self):
@@ -24,6 +25,32 @@ class Animal:
         return self.weight / (self.height ** 2)
 
 
+class Dog(Animal):
+    def __init__(self, name, age, height, weight, health, color, breed, owner):
+        super().__init__(name, age, height, weight, health, color)
+        self.breed = breed
+        self.owner = owner
 
-animal1 = Animal("Dog", 5, 3, 10, 100, "black")
-animal1.print_name()
+    def print_breed(self):
+        print(f"This dog's breed is: {self.breed}")
+
+    def print_owner(self):
+        print(f"This dog's owner is: {self.owner}")
+
+    def print_name(self):
+        print(f"This dog's name is: {self.name}")
+
+    @classmethod
+    def greet(self):
+        print("Woof Woof")
+
+
+littleDog = Dog("Little Dog", 2, 0.5, 5, "good", "black", "Pitbull", "John")
+littleDog.print_name()
+littleDog.print_age()
+littleDog.print_color()
+littleDog.print_breed()
+littleDog.print_owner()
+print(littleDog.calculate_bmi())
+
+Dog.greet()
