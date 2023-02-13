@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
 app = FastAPI()  # Create an instance of the FastAPI class
-
+max_str_length = 50
 
 class User(BaseModel):  # Create a class that inherits from the BaseModel class
     username: str = Field(
@@ -12,14 +12,17 @@ class User(BaseModel):  # Create a class that inherits from the BaseModel class
         title="The user's name",
         description="This is the user's name",
         min_length=1,
-        max_length=50,
+        max_length=max_str_length,
         default="user"
     )
     liked_posts: list[int] = Field(
         description="Array of integers",
         min_items=2,
-        max_items=10,
+        max_items=max_str_length,
     )  #list[int]  # The liked_posts is a list of integers
+
+    #class Config:  # Create a class that inherits from the BaseModel class
+        #max_anystr_length = 20 # The max length of any string
 
 
 class FullUserProfilInfo(User):  # Create a class that inherits from the BaseModel class
