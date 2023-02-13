@@ -6,15 +6,21 @@ from pydantic import BaseModel
 app = FastAPI()  # Create an instance of the FastAPI class
 
 
+class ProfileInfo(BaseModel):  # Create a class that inherits from the BaseModel class
+    short_description: str
+    long_description: str
+
 class User(BaseModel):  # Create a class that inherits from the BaseModel class
     username: str  # The username is a string
-    short_description: str = "default value"
+    profile_info: ProfileInfo  # The profile_info is a ProfileInfo object
     liked_posts: Optional[list[int]] = None  #list[int]  # The liked_posts is a list of integers
 
 
-def get_user_info() -> User: # The function returns a User object
-    content = {"username": "testuser", "short_description": "test description", "liked_posts": [1, 2, 3]}  # Create a dictionary
-    return User(**content)  # Return the User object
+def get_user_info() -> User:  # The function returns a User object
+    profile_info = {"short_description": "test description", "long_description": "test long description"} # Create a dictionary
+    profile_info = ProfileInfo(**profile_info)  # Create a ProfileInfo object
+    user_content = {"username": "testuser", "profile_info": profile_info, "liked_posts": [1, 2, 3]}
+    return User(**user_content)  # Return the User object
 
 
 
