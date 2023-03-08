@@ -67,3 +67,23 @@
 # dataType({1, 2, 3, 4, 5})  # Set
 # dataType({'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5})  # Dictionary
 # dataType(None)  # Unknown
+
+
+#Creating a Function to Smartly Round Decimal Points in a Result of Addition
+#
+# print(23.57 + 45.67)  # 69.24
+# print(23.57 + 45.6705)  # 69.2405
+
+def sum_r(*n):
+    sm = 0
+    lst = []
+    for num in n:
+        sm += num
+        num = str(num).split('.')
+        lst.append(len(num[1]))
+    min_lst = min(lst)
+    return round(sm, min_lst)
+
+# print(sum_r(23, 45.6721, 45.7)) # index out of range: list index out of range // because 45.6721 has 5 decimal points
+# print(sum_r(23.57, 45.67, 45.6705))  # 114.9
+# print(sum_r(23.5, 45.67, 45.6705, 45.6705))  # 160.5
