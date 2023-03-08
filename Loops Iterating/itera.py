@@ -33,10 +33,7 @@
 # print(lst)
 # print(unq)
 
-lst = [9, 4, 3, 4, 5, 6, 1, 8, 9, 10,2,4,3,5,11,15]
-unq = [set(lst)]
-for e in unq:
-    if e < 10:
-        unq.append(e)
-print(lst)
-print(unq)
+# lst = [9, 4, 3, 4, 5, 6, 1, 8, 9, 10,2,4,3,5,11,15]
+# unq = [set(lst)]
+# print(lst)
+# print(unq)
