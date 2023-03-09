@@ -108,17 +108,21 @@
 
   # [2, 6, 10, 18]
 
+#
+# def fizzBuzz():
+#     for i in range(1, 101):
+#         if i % 3 and i % 5 == 0:
+#             print('FizzBuzz', end='\n')
+#         elif i % 3 == 0:
+#             print('Fizz', end='\n')
+#         elif i % 5 == 0:
+#             print('Buzz', end='\n')
+#         else:
+#             print(i, end=', ')
+#
+# fizzBuzz()
 
-def fizzBuzz():
-    for i in range(1, 101):
-        if i % 3 and i % 5 == 0:
-            print('FizzBuzz', end='\n')
-        elif i % 3 == 0:
-            print('Fizz', end='\n')
-        elif i % 5 == 0:
-            print('Buzz', end='\n')
-        else:
-            print(i, end=', ')
-
-fizzBuzz()
+# fizzBuz =  lambda x: 'FizzBuzz' if x % 5 and x % 3 == 0 else 'fizz' if x % 3 == 0 else 'buzz' if x % 5 == 0 else x
+# fb = list(map(fizzBuz, range(1, 101)))
+# print(fb)
 
