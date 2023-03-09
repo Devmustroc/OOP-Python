@@ -1,5 +1,14 @@
-def devide(a, b):
-    return a/b
+# def devide(a, b):
+#     return a/b
+#
+#
+# print("my_module.py: ", __name__)
+#
+# import libs.mylib
+import sys
+import my_module
 
 
-print("my_module.py: ", __name__)
+import sys
+
+print(sys.modules)
