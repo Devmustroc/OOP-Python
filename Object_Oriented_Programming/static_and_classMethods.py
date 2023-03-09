@@ -13,6 +13,8 @@ class ClassTest:
         print("Called static_method.")
 
 
-test = ClassTest()
-test.instance_method()
-ClassTest.instance_method(test)
+test = ClassTest()  # create an instance of ClassTest
+test.instance_method() # instance method takes the object as the first argument
+ClassTest.class_method() # class method takes the class as the first argument
+ClassTest.instance_method(test) # instance method takes the object as the first argument
+ClassTest.static_method()  # static method doesn't take any arguments
