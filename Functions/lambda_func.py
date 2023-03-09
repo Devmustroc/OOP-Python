@@ -99,9 +99,11 @@ sequence = [1, 3, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 # turn list int to string
 # doubled = [str(x * 2) for x in sequence]
 # print(", ".join(doubled))  # [2, 6, 10, 18]
-doubled = [x * 2 if x % 2 == 0 else x + 3 for x in sequence]
-doubled1 = map(double, sequence)
-print(tuple(doubled1))
+doubled = [x * 2 if x % 2 == 0 else x + 3 for x in sequence] # iternation in list comprehension
+doubled1 = map(double, sequence) # iteration in map function
+doublLambda = list(map(lambda x: x * 2 if x % 2 == 0 else x + 3, sequence)) # iteration in lambda function
+print(doublLambda)
+print(tuple(doubled1))  #
 print(doubled)
 
   # [2, 6, 10, 18]
