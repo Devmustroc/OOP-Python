@@ -16,5 +16,6 @@ class Coder():
     def info(self):
         print(f'Hello {self.name}, your age is {self.age} and you know {", ".join(self.language)}')
 
-cd = Coder("jhon", 30, 'Python')
+
+cd = Coder(input('Enter your name: '), int(input('Enter your age: ')), input('Enter your language: ').split(','))
 cd.info()
