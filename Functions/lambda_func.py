@@ -74,16 +74,25 @@
 # print(23.57 + 45.67)  # 69.24
 # print(23.57 + 45.6705)  # 69.2405
 
-def sum_r(*n):
-    sm = 0
-    lst = []
-    for num in n:
-        sm += num
-        num = str(num).split('.')
-        lst.append(len(num[1]))
-    min_lst = min(lst)
-    return round(sm, min_lst)
+# def sum_r(*n):
+#     sm = 0
+#     lst = []
+#     for num in n:
+#         sm += num
+#         num = str(num).split('.')
+#         lst.append(len(num[1]))
+#     min_lst = min(lst)
+#     return round(sm, min_lst)
 
 # print(sum_r(23, 45.6721, 45.7)) # index out of range: list index out of range // because 45.6721 has 5 decimal points
 # print(sum_r(23.57, 45.67, 45.6705))  # 114.9
 # print(sum_r(23.5, 45.67, 45.6705, 45.6705))  # 160.5
+
+def double(x):
+    return x * 2
+
+sequence = [1, 3, 5, 9]
+doubled = [x * 2 for x in sequence]
+# turn list int to string
+doubled = [str(x) for x in doubled]
+print(", ".join(doubled))  # [2, 6, 10, 18]
