@@ -40,10 +40,10 @@ def average_grade(data):
 # You must add all of the grades together
 # You must also count how many students there are in total in the entier list
 
-def average_grade_all_students(student_list):
-    total = 0
-    count = 0
-    for student in student_list:
-        total += sum(student['grades'])
-        count += len(student['grades'])
-    return total / count
+# def average_grade_all_students(student_list):
+#     total = 0
+#     count = 0
+#     for student in student_list:
+#         total += sum(student['grades'])
+#         count += len(student['grades'])
+#     return total / count
