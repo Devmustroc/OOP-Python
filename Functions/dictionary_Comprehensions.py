@@ -26,4 +26,24 @@ user_mapping = {user[1] : user for user in users}
 # 'name', 'grades', 'school'.
 # the value of each mus be  'Jose', [70, 80, 90], 'Computing'
 
-students = { 'name': 'Jose','school': 'Computing', 'grades': (66, 77, 88) }
+students = {'name': 'Jose','school': 'Computing', 'grades': (66, 77, 88)}
+
+#Assume the argument, data, is a dictionary.
+# Modify the grades variable so that it accesses the 'grades' key of the data dictionary.
+
+def average_grade(data):
+    grades = data['grades']
+    return sum(grades) / len(grades)
+
+# Implement the function below
+# Given a list of students (dicyonaies), calculate the average grade received on an exam, for the entire class.
+# You must add all of the grades together
+# You must also count how many students there are in total in the entier list
+
+def average_grade_all_students(student_list):
+    total = 0
+    count = 0
+    for student in student_list:
+        total += sum(student['grades'])
+        count += len(student['grades'])
+    return total / count
