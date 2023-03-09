@@ -88,22 +88,37 @@
 # print(sum_r(23.57, 45.67, 45.6705))  # 114.9
 # print(sum_r(23.5, 45.67, 45.6705, 45.6705))  # 160.5
 
-def double(x):
-    if x % 2 == 0:
-        return x * 2
-    else:
-        return x + 3
-
-sequence = [1, 3, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# def double(x):
+#     if x % 2 == 0:
+#         return x * 2
+#     else:
+#         return x + 3
+#
+# sequence = [1, 3, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 # doubled = [x * 2 for x in sequence]
 # turn list int to string
 # doubled = [str(x * 2) for x in sequence]
 # print(", ".join(doubled))  # [2, 6, 10, 18]
-doubled = [x * 2 if x % 2 == 0 else x + 3 for x in sequence] # iternation in list comprehension
-doubled1 = map(double, sequence) # iteration in map function
-doublLambda = list(map(lambda x: x * 2 if x % 2 == 0 else x + 3, sequence)) # iteration in lambda function
-print(doublLambda)
-print(tuple(doubled1))  #
-print(doubled)
+# doubled = [x * 2 if x % 2 == 0 else x + 3 for x in sequence] # iternation in list comprehension
+# doubled1 = map(double, sequence) # iteration in map function
+# doublLambda = list(map(lambda x: x * 2 if x % 2 == 0 else x + 3, sequence)) # iteration in lambda function
+# print(doublLambda)
+# print(tuple(doubled1))  #
+# print(doubled)
 
   # [2, 6, 10, 18]
+
+
+def fizzBuzz():
+    for i in range(1, 101):
+        if i % 3 and i % 5 == 0:
+            print('FizzBuzz', end='\n')
+        elif i % 3 == 0:
+            print('Fizz', end='\n')
+        elif i % 5 == 0:
+            print('Buzz', end='\n')
+        else:
+            print(i, end=', ')
+
+fizzBuzz()
+
