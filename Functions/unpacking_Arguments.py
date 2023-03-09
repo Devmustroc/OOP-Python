@@ -19,7 +19,7 @@ def multiply(*args):
 
 # def apply(*args, operator):
 #     if operator == '*':
-#         return multiply(*args)
+#         return multiply(*args) # unpacks the args
 #     elif operator == '+':
 #         return sum(args)
 #     elif operator == '-':
@@ -28,4 +28,4 @@ def multiply(*args):
 #         return 'No valid operator provided to apply()'
 #
 # ls1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# print(apply(*ls1, operator='/'))
+# print(apply(*ls1, operator='*'))
