@@ -5,6 +5,9 @@ class BookShelf:
     def __str__(self):
         return f"BookShelf with {len(self.books)} books."
 
+    def get_books(self):
+        bks = [book.name for book in self.books]
+        return bks
 
 class Book():
     def __init__(self, name):
@@ -19,3 +22,4 @@ book2 = Book("Python 101")
 book3 = Book("Game of thrones")
 shelf = BookShelf(book, book2, book3)
 print(shelf)
+print(shelf.get_books())
