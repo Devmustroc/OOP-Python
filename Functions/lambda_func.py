@@ -89,10 +89,19 @@
 # print(sum_r(23.5, 45.67, 45.6705, 45.6705))  # 160.5
 
 def double(x):
-    return x * 2
+    if x % 2 == 0:
+        return x * 2
+    else:
+        return x + 3
 
-sequence = [1, 3, 5, 9]
-doubled = [x * 2 for x in sequence]
+sequence = [1, 3, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# doubled = [x * 2 for x in sequence]
 # turn list int to string
-doubled = [str(x) for x in doubled]
-print(", ".join(doubled))  # [2, 6, 10, 18]
+# doubled = [str(x * 2) for x in sequence]
+# print(", ".join(doubled))  # [2, 6, 10, 18]
+doubled = [x * 2 if x % 2 == 0 else x + 3 for x in sequence]
+doubled1 = map(double, sequence)
+print(tuple(doubled1))
+print(doubled)
+
+  # [2, 6, 10, 18]
