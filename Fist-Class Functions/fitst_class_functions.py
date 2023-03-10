@@ -42,6 +42,8 @@
 # result = calculate(20, 4 , 3, 2, operator=choice[0])
 # print(result)
 
+
+from operator import itemgetter # itemgetter is a function that takes an index and returns a function that takes a list and returns the element at that index
 def search(sequence, expected, finder):
     for elem in sequence:
         if finder(elem) == expected:
@@ -56,7 +58,4 @@ friend = [
 ]
 
 
-def get_friend_name(friends):
-    return friends["name"]
-
-print(search(friend, "bob Smith", get_friend_name))
+print(search(friend, "Rolf Smith", itemgetter("name")))
