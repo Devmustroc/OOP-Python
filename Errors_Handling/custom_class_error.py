@@ -1,3 +1,6 @@
+class TooManyPagesReadError(ValueError):
+    pass
+
 class Book:
     def __init__(self, name: str, pages_count: int):
         self.name = name
@@ -20,4 +23,8 @@ class Book:
 
 python101 = Book("Python 101", 50)
 python101.read(35)
-python101.read(50)
+
+try:
+    python101.read(50)
+except TooManyPagesReadError as e:
+    print(e)
