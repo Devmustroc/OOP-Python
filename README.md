@@ -1,3 +1,5 @@
+![Alt text](https://th.bing.com/th/id/R.4f4625d9c6f17d21af7f6e3621d9e12c?rik=78AfFT2Pv6QAtw&riu=http%3a%2f%2fkazmatechnology.com%2fimg%2fbanner_python.png&ehk=LZEkxts4%2bRb0OqQNr7%2fo4YwfTySKPR7nW0jKC%2fScbsw%3d&risl=&pid=ImgRaw&r=0)
+
 # OOP-Python
 
 This is a repository for learning object-oriented programming (OOP) with Python.
