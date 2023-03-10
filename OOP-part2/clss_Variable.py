@@ -55,3 +55,14 @@
 # num1 = Algerba(2.0, 3.5)
 # num3 = num1 + num
 # num3.show_Value()
+
+class Numeric_String:
+    def __init__(self, Str = ''):
+        self.Str = Str
+
+    def __int__(self):
+        return int(self.Str)
+
+num = Numeric_String('1024')
+pro = int(num.Str) * 2
+print(pro)
