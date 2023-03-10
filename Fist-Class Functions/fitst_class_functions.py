@@ -41,3 +41,22 @@
 #
 # result = calculate(20, 4 , 3, 2, operator=choice[0])
 # print(result)
+
+def search(sequence, expected, finder):
+    for elem in sequence:
+        if finder(elem) == expected:
+            return elem
+    raise RuntimeError(f"Could not find an element with {expected}.")
+
+
+friend = [
+    {"name": "Rolf Smith", "age": 24},
+    {"name": "Adam Wool", "age": 30},
+    {"name": "Anne Pun", "age": 27},
+]
+
+
+def get_friend_name(friends):
+    return friends["name"]
+
+print(search(friend, "bob Smith", get_friend_name))
